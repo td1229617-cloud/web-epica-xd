@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones con Votos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #nameSection { margin-bottom: 20px; }
+        #postSection { margin-bottom: 20px; }
+        .post { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .vote { cursor: pointer; margin: 0 5px; }
+    </style>
+</head>
+<body>
+    <h1>Publicaciones con Votos</h1>
+    
+    <div id="nameSection">
+        <label for="userName">Ingresa tu nombre:</label>
+        <input type="text" id="userName" placeholder="Tu nombre">
+        <button id="confirmName">Confirmar Nombre</button>
+    </div>
+    
+    <div id="postSection" style="display: none;">
+        <textarea id="message" placeholder="Escribe tu mensaje aquí..." rows="4" cols="50"></textarea><br>
+        <button id="postMessage">Publicar Mensaje</button>
+    </div>
+    
+    <div id="posts"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
