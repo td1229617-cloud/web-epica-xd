@@ -45,7 +45,7 @@ function updateFilePreview() {
     
     selectedFiles.forEach(file => {
         const item = document.createElement('div');
-        item.textContent = `📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+        item.textContent = `📄 ${file.name} (${formatFileSize(file.size)})`;
         fileList.appendChild(item);
         
         // Mostrar vista previa de imagen
@@ -57,16 +57,6 @@ function updateFilePreview() {
             };
             reader.readAsDataURL(file);
         }
-    });
-}
-
-// Convertir archivo a Base64
-function fileToBase64(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
     });
 }
 
@@ -116,16 +106,6 @@ document.getElementById('postMessage').addEventListener('click', async function(
     }
 });
 
-// Descargar archivo
-function downloadFile(fileName, fileData) {
-    const link = document.createElement('a');
-    link.href = fileData;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
 // Cargar y mostrar posts
 function loadPosts() {
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -150,7 +130,7 @@ function loadPosts() {
                 }
                 filesHTML += `<span class="file-item">
                     <a class="file-link" onclick="downloadFile('${file.name}', '${file.data}')">${file.name}</a>
-                    (${(file.size / 1024).toFixed(2)} KB)
+                    (${formatFileSize(file.size)})
                 </span>`;
             });
             filesHTML += '</div>';
