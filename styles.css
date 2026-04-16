@@ -16,20 +16,72 @@ body {
     padding: 0 16px;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 24px;
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    margin-bottom: 14px;
 }
 
-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 8px;
-    color: #0e3b72;
+.logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #0f172a;
 }
 
-header p {
-    margin: 0;
-    color: #4b5870;
+.topbar nav {
+    display: flex;
+    gap: 18px;
+}
+
+.topbar a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.topbar a:hover {
+    color: #2563eb;
+}
+
+.hero {
+    display: grid;
+    gap: 16px;
+    padding: 30px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(59, 130, 246, 0.06));
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #334155;
+    max-width: 740px;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.feature-pill {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .card {
@@ -203,6 +255,16 @@ button.secondary {
 
 .vote:hover {
     background-color: #1d4ed8;
+}
+
+.section-title {
+    margin: 24px 0 10px;
+}
+
+.section-title h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #0f172a;
 }
 
 .footer {
